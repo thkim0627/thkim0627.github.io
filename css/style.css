@@ -1,34 +1,51 @@
-/* CSS 초기화 코드 */
-html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary,
-time, mark, audio, video { margin: 0; padding: 0; border: 0; font-size: 100%; font: inherit; vertical-align: baseline; }
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css");
 
-/* 이전 브라우저에 대한 HTML5 디스플레이 역할 재설정 */
-article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section { display: block; }
-body { line-height: 1; }
-ol, ul { list-style: none; }
-blockquote, q { quotes: none; }
-blockquote:before, blockquote:after, q:before, q:after { content: ''; content: none; }
-table { border-collapse: collapse; border-spacing: 0; }
+* { 
+  font-family: Pretendard;
+}
 
-/* 메인화면 */
-body{ background: #005AA7; background: -webkit-linear-gradient(to right, #00B4DB, #005AA7);  background: linear-gradient(to right, #005AA7, #00B4DB); }
+body {
+    background: #56CCF2;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #2F80ED, #56CCF2);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #2F80ED, #56CCF2); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
 
-/* 메인로고 이벤트 */
-@keyframes fadeInLeft { 0% { opacity: 0; transform: translate3d(-100%, 0, 0); } to { opacity: 1; transform: translateZ(10); }}
-#main { margin: 15px 0 0 10px; animation: fadeInLeft 1s; }
-#main a { color: white; font-size: 14pt; font-weight: bold; text-decoration: none; }
+canvas {
+  transition: 2s;
+}
 
-/* 마우스 따라디는 원 */
-#mouseCircle { 
-    position: absolute;
-    top: 0; 
-    width: 11px;
-    height: 11px;
-    border-radius: 50%;
-    background-color: yellow;  
-    transform: translate(-50%, -50%); 
-    transition:all 0.8s ease-out;
+button {
+  background:#0052d4;
+  color: #f9f9f9;
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-top: 2rem;
+  border: none;
+  border-radius: 5px;
+  padding: 1rem 2rem;
+  transition: .2s;
+  cursor: pointer;
+}
+ 
+div {
+  width: 600px;
+  overflow: hidden;
+  display: flex;
+  margin: 135px auto;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+}
+
+div::before {
+  content: "";
+  position: absolute;
+  width: 10px;
+  height: 50px;
+  border-radius: 50%;
+  background: red;
+  top: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 22;
 }
